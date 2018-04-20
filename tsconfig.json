@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "target": "es2015",
+      "module": "es2015",
+      "outDir": "./tsc",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "alwaysStrict": true,
+      "strictFunctionTypes": true,
+      "strictPropertyInitialization": true,
+      "strictNullChecks": true,
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+    },
+    "include": [
+      "./src"
+    ]
+}
