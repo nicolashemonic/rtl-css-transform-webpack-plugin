@@ -1,5 +1,8 @@
 # RTL CSS Transform Webpack Plugin 💎
 
+[![npm version](https://badge.fury.io/js/rtl-css-transform-webpack-plugin.svg)](https://badge.fury.io/js/rtl-css-transform-webpack-plugin)
+[![Dependency Status](https://david-dm.org/nicolashemonic/rtl-css-transform-webpack-plugin.svg)](https://david-dm.org/nicolashemonic/rtl-css-transform-webpack-plugin)
+
 Webpack plugin that implements [RTLCSS](https://github.com/MohammadYounes/rtlcss) framework for transforming Left-To-Right (LTR) Cascading Style Sheets (CSS) to Right-To-Left (RTL).
 
 Before you should use a CSS extraction plugin. For Webpack v4 we use [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) to extract CSS from JS.
