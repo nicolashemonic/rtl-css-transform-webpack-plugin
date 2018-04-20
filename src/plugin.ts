@@ -9,8 +9,9 @@ interface IOptions {
     config: Config | undefined;
 }
 
+const pluginName = "rtl-css-transform-webpack-plugin";
 const isCss = (filename: string) => path.extname(filename) === ".css";
-const buildError = (error: string) => new Error(`[rtl-css-webpack-plugin] ${error}`);
+const buildError = (error: string) => new Error(`[${pluginName}] ${error}`);
 
 export default class RtlCssPlugin implements webpack.Plugin {
     private options: IOptions;
@@ -38,7 +39,7 @@ export default class RtlCssPlugin implements webpack.Plugin {
             map: (sourcemap === undefined && !!devtool) || !!sourcemap
         };
 
-        compiler.hooks.emit.tap("rtl-css-webpack-plugin", compilation => {
+        compiler.hooks.emit.tap(pluginName, compilation => {
             compilation.chunks.forEach(chunk => {
                 chunk.files.filter(isCss).forEach((chunkFilename: string) => {
                     const asset: Source = compilation.assets[chunkFilename];
