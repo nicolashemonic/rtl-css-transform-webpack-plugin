@@ -32,12 +32,16 @@ style.rtl.css
 }
 ```
 
+----
+
 ### Features 😛
 
 - [x] Full [RTLCSS](http://rtlcss.com/learn/usage-guide/options) options, plugins & hooks support
 - [x] CSS modules & Code splitting compatible
 - [x] Source map for debugging
 - [x] Support Webpack v4
+
+----
 
 ### Usage
 
@@ -70,6 +74,8 @@ module.exports = {
 }
 ```
 
+----
+
 ### Filename
 
 This option determines the name of each output bundle.
@@ -83,6 +89,8 @@ new RtlCssPlugin({
     filename: "rtl/[name].css" // create a rtl folder
 })
 ```
+
+----
 
 ### Sourcemap
 
@@ -102,6 +110,8 @@ Alternatively it can be enabled using [webpack devtool option](https://webpack.j
 webpack --devtool source-map
 ```
 
+----
+
 ### Minification
 
 Using built-in webpack minification via production option.
@@ -111,6 +121,8 @@ webpack -p
 ```
 
 Alternatively see [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin/blob/master/README.md#minimizing-for-production) minification recommendation for futur Webpack v5.
+
+----
 
 ### RTLCSS options
 
@@ -129,3 +141,7 @@ new RtlCssPlugin({
     }
 })
 ```
+
+----
+
+💐 Special thanks to @MohammadYounes for RTLCSS.

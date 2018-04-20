@@ -1,6 +1,6 @@
 {
   "name": "rtl-css-transform-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack plugin for transforming CSS from LTR to RTL.",
   "main": "dist/index.js",
   "scripts": {
@@ -20,6 +20,11 @@
     "webpack",
     "plugin"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicolashemonic/rtl-css-transform-webpack-plugin.git"
+  },
+  "bugs": "https://github.com/nicolashemonic/rtl-css-transform-webpack-plugin/issues?state=open",
   "author": "Nicolas Hémonic",
   "license": "MIT",
   "files": [
