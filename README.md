@@ -1,8 +1,8 @@
-### RTL CSS Transform Webpack Plugin
+### RTL CSS Transform Webpack Plugin 💎
 
 Webpack plugin that implements [RTLCSS](https://github.com/MohammadYounes/rtlcss) framework for transforming Left-To-Right (LTR) Cascading Style Sheets (CSS) to Right-To-Left (RTL).
 
-Before you should use a CSS extraction plugin. For Webpack v4 we use [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin) to extract CSS from JS.
+Before you should use a CSS extraction plugin. For Webpack v4 we use [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) to extract CSS from JS.
 
 ```rtl-css-transform-webpack-plugin``` creates RTL CSS file per LTR CSS file:
 
@@ -32,7 +32,7 @@ style.rtl.css
 }
 ```
 
-### Features
+### Features 😛
 
 - [x] Full [RTLCSS](http://rtlcss.com/learn/usage-guide/options) options, plugins & hooks support
 - [x] CSS modules & Code splitting compatible
