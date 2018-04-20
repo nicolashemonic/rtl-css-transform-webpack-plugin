@@ -1,4 +1,4 @@
-### RTL CSS Transform Webpack Plugin 💎
+# RTL CSS Transform Webpack Plugin 💎
 
 Webpack plugin that implements [RTLCSS](https://github.com/MohammadYounes/rtlcss) framework for transforming Left-To-Right (LTR) Cascading Style Sheets (CSS) to Right-To-Left (RTL).
 
@@ -32,8 +32,6 @@ style.rtl.css
 }
 ```
 
-----
-
 ### Features 😛
 
 - [x] Full [RTLCSS](http://rtlcss.com/learn/usage-guide/options) options, plugins & hooks support
@@ -41,9 +39,13 @@ style.rtl.css
 - [x] Source map for debugging
 - [x] Support Webpack v4
 
-----
+## Install
 
-### Usage
+```cli
+npm install rtl-css-transform-webpack-plugin --save-dev
+```
+
+## Usage
 
 ```js
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -74,8 +76,6 @@ module.exports = {
 }
 ```
 
-----
-
 ### Filename
 
 This option determines the name of each output bundle.
@@ -89,8 +89,6 @@ new RtlCssPlugin({
     filename: "rtl/[name].css" // create a rtl folder
 })
 ```
-
-----
 
 ### Sourcemap
 
@@ -110,8 +108,6 @@ Alternatively it can be enabled using [webpack devtool option](https://webpack.j
 webpack --devtool source-map
 ```
 
-----
-
 ### Minification
 
 Using built-in webpack minification via production option.
@@ -121,8 +117,6 @@ webpack -p
 ```
 
 Alternatively see [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin/blob/master/README.md#minimizing-for-production) minification recommendation for futur Webpack v5.
-
-----
 
 ### RTLCSS options
 
