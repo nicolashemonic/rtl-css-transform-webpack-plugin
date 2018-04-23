@@ -1,0 +1,10 @@
+.example {
+   direction: rtl;
+   margin: 0;
+   padding: 1em 1em .5em 2em;
+   background-color: #353639;
+   font-family: "Droid Arabic Kufi","Droid Sans", sans-serif;
+   font-size: 14px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIjxpbnB1dCBjc3MgMz4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7R0FDRyxlQUFlO0dBQ2YsVUFBVTtHQUNWLDBCQUEwQjtHQUMxQiwwQkFBMEI7R0FDMUIsMERBQTBFO0dBQzFFLGdCQUE0QjtDQUM5QiIsImZpbGUiOiJ0by5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZSB7XG4gICBkaXJlY3Rpb246IGx0cjtcbiAgIG1hcmdpbjogMDtcbiAgIHBhZGRpbmc6IDFlbSAyZW0gLjVlbSAxZW07XG4gICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzUzNjM5O1xuICAgZm9udC1mYW1pbHk6IFwiRHJvaWQgU2Fuc1wiLCBzYW5zLXNlcmlmLypydGw6cHJlcGVuZDpcIkRyb2lkIEFyYWJpYyBLdWZpXCIsKi87XG4gICBmb250LXNpemU6IDE2cHgvKnJ0bDoxNHB4Ki87XG59XG4iXX0= */

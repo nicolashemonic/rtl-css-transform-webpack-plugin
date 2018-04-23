@@ -4,7 +4,7 @@
   "description": "Webpack plugin for transforming CSS from LTR to RTL.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Info: test will be specified soon\" && exit 1",
+    "test": "jest --coverage",
     "tsc": "tsc",
     "babel": "babel tsc -d dist",
     "prebuild": "npm run clean-dist",
@@ -35,12 +35,21 @@
     "webpack-sources": "^1.1.0"
   },
   "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/memory-fs": "^0.3.0",
+    "@types/mini-css-extract-plugin": "^0.2.0",
     "@types/webpack": "^4.1.3",
     "@types/webpack-sources": "^0.1.4",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.11",
+    "jest": "^22.4.3",
+    "memory-fs": "^0.4.1",
+    "mini-css-extract-plugin": "^0.4.0",
     "rimraf": "^2.6.2",
-    "typescript": "^2.8.3"
+    "ts-jest": "^22.4.4",
+    "typescript": "^2.8.3",
+    "webpack": "^4.6.0"
   }
 }

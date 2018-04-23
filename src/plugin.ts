@@ -3,33 +3,34 @@ import rtlcss, { Config } from "rtlcss";
 import { Source, RawSource } from "webpack-sources";
 import webpack from "webpack";
 
-interface IOptions {
-    filename: string;
-    sourcemap: boolean | undefined;
-    config: Config | undefined;
+export interface IOptions {
+    filename?: string;
+    sourcemap?: boolean | undefined;
+    config?: Config | undefined;
 }
 
 const pluginName = "rtl-css-transform-webpack-plugin";
 const isCss = (filename: string) => path.extname(filename) === ".css";
-const buildError = (error: string) => new Error(`[${pluginName}] ${error}`);
 
 export default class RtlCssPlugin implements webpack.Plugin {
-    private options: IOptions;
+    private options: IOptions = {
+        filename: "[name].rtl.css",
+        sourcemap: undefined,
+        config: undefined
+    };
 
-    constructor(
-        options = {
-            filename: "[name].rtl.css",
-            sourcemap: undefined,
-            config: undefined
+    constructor(options?: IOptions) {
+        if (typeof options === "object") {
+            if (typeof options.filename === "string") {
+                this.options.filename = options.filename;
+            }
+            if (typeof options.sourcemap === "boolean") {
+                this.options.sourcemap = options.sourcemap;
+            }
+            if (typeof options.config === "object") {
+                this.options.config = options.config;
+            }
         }
-    ) {
-        if (typeof options !== "object") {
-            throw buildError("options must be an object.");
-        }
-        if (typeof options.filename !== "string") {
-            throw buildError("options.filename must be a string.");
-        }
-        this.options = options;
     }
 
     public apply(compiler: webpack.Compiler) {
@@ -45,7 +46,7 @@ export default class RtlCssPlugin implements webpack.Plugin {
                     const asset: Source = compilation.assets[chunkFilename];
                     const result = rtlcss.configure(config).process(asset.source(), postcssOptions);
                     const rawSource = new RawSource(result.css);
-                    const assetFilename = compilation.getPath(filename, {
+                    const assetFilename = compilation.getPath(filename as string, {
                         chunk
                     });
                     compilation.assets[assetFilename] = rawSource;
