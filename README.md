@@ -89,7 +89,7 @@ See [webpack output filename](https://webpack.js.org/configuration/output/#outpu
 
 ```js
 new RtlCssPlugin({
-    filename: "rtl/[name].css" // create a rtl folder
+    filename: "rtl/[chunkhash].css"
 })
 ```
 
@@ -119,7 +119,7 @@ Using built-in webpack minification via production option.
 webpack -p
 ```
 
-Alternatively see [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin/blob/master/README.md#minimizing-for-production) minification recommendation for futur Webpack v5.
+Alternatively see [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin/blob/master/README.md#minimizing-for-production) minification recommendation.
 
 ### RTLCSS options
 

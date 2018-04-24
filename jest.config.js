@@ -9,5 +9,5 @@ module.exports = {
             tsConfigFile: "tsconfig.test.json"
         }
     },
-    coveragePathIgnorePatterns: ["node_modules"]
+    coveragePathIgnorePatterns: ["node_modules", "tests/bundle.ts"]
 };

@@ -1,14 +1,12 @@
 {
   "name": "rtl-css-transform-webpack-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Webpack plugin for transforming CSS from LTR to RTL.",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest --coverage",
-    "tsc": "tsc",
-    "babel": "babel tsc -d dist",
     "prebuild": "npm run clean-dist",
-    "build": "npm run tsc && npm run babel",
+    "build": "tsc && babel tsc -d dist",
     "postbuild": "npm run clean-tsc",
     "prepublish": "npm run build",
     "clean-dist": "rimraf dist",
