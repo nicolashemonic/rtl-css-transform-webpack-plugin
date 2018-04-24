@@ -1,0 +1,8 @@
+.example {
+   direction: ltr;
+   margin: 0;
+   padding: 1em 2em .5em 1em;
+   background-color: #353639;
+   font-family: "Droid Sans", sans-serif/*rtl:prepend:"Droid Arabic Kufi",*/;
+   font-size: 16px/*rtl:bigger-font-size*/;
+}

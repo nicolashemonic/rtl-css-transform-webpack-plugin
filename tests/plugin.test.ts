@@ -27,7 +27,61 @@ describe("rtl-css-transform-webpack-plugin", () => {
         );
     });
 
-    it("Should take into account config", async () => {
+    it("Should minimize bundle", async () => {
+        expect.assertions(1);
+        const bundle = await buildBundle("minimize", undefined, true);
+        expect(bundle.readFileSync(resolver("main.rtl.css"))).toEqual(
+            fs.readFileSync(resolver("cases", "minimize", "expected.css"))
+        );
+    });
+
+    it("Should take into account RTLCSS options", async () => {
+        expect.assertions(1);
+        const bundle = await buildBundle("options", {
+            config: {
+                options: {
+                    clean: false
+                }
+            }
+        });
+        expect(bundle.readFileSync(resolver("main.rtl.css"))).toEqual(
+            fs.readFileSync(resolver("cases", "options", "expected.css"))
+        );
+    });
+
+    it("Should take into account RTLCSS plugins", async () => {
+        expect.assertions(1);
+        const bundle = await buildBundle("plugins", {
+            config: {
+                plugins: [
+                    {
+                        name: "test-plugin",
+                        priority: 1,
+                        directives: {
+                            control: {},
+                            value: [
+                                {
+                                    name: "bigger-font-size",
+                                    action: function(decl, expr, context) {
+                                        decl.raws.value.raw.replace(expr, function(match, value) {
+                                            decl.value = decl.raws.value.raw = "18px";
+                                        });
+                                        return true;
+                                    }
+                                }
+                            ]
+                        },
+                        processors: []
+                    }
+                ]
+            }
+        });
+        expect(bundle.readFileSync(resolver("main.rtl.css"))).toEqual(
+            fs.readFileSync(resolver("cases", "plugins", "expected.css"))
+        );
+    });
+
+    it("Should take into account RTLCSS hooks", async () => {
         expect.assertions(1);
         const bundle = await buildBundle("hooks", {
             config: {

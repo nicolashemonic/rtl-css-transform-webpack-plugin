@@ -111,15 +111,15 @@ Alternatively it can be enabled using [webpack devtool option](https://webpack.j
 webpack --devtool source-map
 ```
 
-### Minification
+### Minimize
 
-Using built-in webpack minification via production option.
+Using built-in webpack optimization via production option.
 
 ```cli
 webpack -p
 ```
 
-Alternatively see [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin/blob/master/README.md#minimizing-for-production) minification recommendation.
+Alternatively see [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin/blob/master/README.md#minimizing-for-production) optimization recommendation.
 
 ### RTLCSS options
 
@@ -134,7 +134,7 @@ new RtlCssPlugin({
     config: {
         options: {},
         plugins: [],
-        hooks: []
+        hooks: {}
     }
 })
 ```

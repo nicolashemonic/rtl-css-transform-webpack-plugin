@@ -1,6 +1,6 @@
 {
   "name": "rtl-css-transform-webpack-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Webpack plugin for transforming CSS from LTR to RTL.",
   "main": "dist/index.js",
   "scripts": {
@@ -45,9 +45,11 @@
     "jest": "^22.4.3",
     "memory-fs": "^0.4.1",
     "mini-css-extract-plugin": "^0.4.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.0",
     "rimraf": "^2.6.2",
     "ts-jest": "^22.4.4",
     "typescript": "^2.8.3",
+    "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.6.0"
   }
 }
