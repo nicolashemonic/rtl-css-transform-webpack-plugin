@@ -2,6 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/rtl-css-transform-webpack-plugin.svg)](https://badge.fury.io/js/rtl-css-transform-webpack-plugin)
 [![Dependency Status](https://david-dm.org/nicolashemonic/rtl-css-transform-webpack-plugin.svg)](https://david-dm.org/nicolashemonic/rtl-css-transform-webpack-plugin)
+[![Build Status](https://travis-ci.org/nicolashemonic/rtl-css-transform-webpack-plugin.svg?branch=master)](https://travis-ci.org/nicolashemonic/rtl-css-transform-webpack-plugin)
 
 Webpack plugin that implements [RTLCSS](https://github.com/MohammadYounes/rtlcss) framework for transforming Left-To-Right (LTR) Cascading Style Sheets (CSS) to Right-To-Left (RTL).
 

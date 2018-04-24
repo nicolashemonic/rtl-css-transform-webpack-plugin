@@ -13,8 +13,8 @@ describe("rtl-css-transform-webpack-plugin", () => {
 
     it("Should change file name", async () => {
         expect.assertions(1);
-        const bundle = await buildBundle("filename", { filename: "rtl/[chunkhash].css" });
-        expect(bundle.readFileSync(resolver("rtl", "3040780fff38feccfee5.css"))).toEqual(
+        const bundle = await buildBundle("filename", { filename: "rtl/[id].css" });
+        expect(bundle.readFileSync(resolver("rtl", "0.css"))).toEqual(
             fs.readFileSync(resolver("cases", "filename", "expected.css"))
         );
     });
