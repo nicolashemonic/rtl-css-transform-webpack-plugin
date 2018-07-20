@@ -40,17 +40,22 @@ export default class RtlCssPlugin implements webpack.Plugin {
             map: (sourcemap === undefined && !!devtool) || !!sourcemap
         };
 
-        compiler.hooks.emit.tap(pluginName, compilation => {
-            compilation.chunks.forEach(chunk => {
-                chunk.files.filter(isCss).forEach((chunkFilename: string) => {
-                    const asset: Source = compilation.assets[chunkFilename];
-                    const result = rtlcss.configure(config).process(asset.source(), postcssOptions);
-                    const rawSource = new RawSource(result.css);
-                    const assetFilename = compilation.getPath(filename as string, {
-                        chunk
+        compiler.hooks.compilation.tap(pluginName, compilation => {
+            compilation.hooks.optimizeChunkAssets.tapAsync(pluginName, (chunks, callback) => {
+                chunks.forEach(chunk => {
+                    chunk.files.filter(isCss).forEach((chunkFilename: string) => {
+                        const asset: Source = compilation.assets[chunkFilename];
+                        const result = rtlcss
+                            .configure(config)
+                            .process(asset.source(), postcssOptions);
+                        const rawSource = new RawSource(result.css);
+                        const assetFilename = compilation.getPath(filename as string, {
+                            chunk
+                        });
+                        compilation.assets[assetFilename] = rawSource;
                     });
-                    compilation.assets[assetFilename] = rawSource;
                 });
+                callback();
             });
         });
     }
