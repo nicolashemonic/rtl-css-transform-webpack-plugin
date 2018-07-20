@@ -40,8 +40,8 @@ export default class RtlCssPlugin implements webpack.Plugin {
             map: (sourcemap === undefined && !!devtool) || !!sourcemap
         };
 
-        compiler.plugin('this-compilation', (compilation) => {
-            compilation.plugin('optimize-chunk-assets', (chunks: Array<any>, done: Function) => {
+        compiler.hooks.compilation.tap(pluginName, compilation => {
+            compilation.hooks.optimizeChunkAssets.tapAsync(pluginName, (chunks, callback) => {
                 chunks.forEach(chunk => {
                     chunk.files.filter(isCss).forEach((chunkFilename: string) => {
                         const asset: Source = compilation.assets[chunkFilename];
@@ -53,7 +53,7 @@ export default class RtlCssPlugin implements webpack.Plugin {
                         compilation.assets[assetFilename] = rawSource;
                     });
                 });
-                done();
+                callback();
             });
         });
     }
